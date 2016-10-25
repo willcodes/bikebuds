@@ -11,7 +11,7 @@ gulp.task('styles',() => {
 	return gulp.src('./dev/styles/**/*.scss')
 	.pipe(sass().on('error',sass.logError))
 	.pipe(autoprefixer())
-	.pipe(concat('style.css'))
+	.pipe(concat('styles.css'))
 	.pipe(gulp.dest('./public/styles/'))
 	.pipe(reload({stream:true}));
 });
