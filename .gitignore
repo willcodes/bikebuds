@@ -1,2 +1,4 @@
 .sass-cache/
 *.css.map
+public/styles
+public/scripts
