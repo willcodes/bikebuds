@@ -10,6 +10,7 @@ function getLocation() {
         alert('Geolocation is not supported by this browser');
     }
 }
+
 function showPosition(position) {
     lat = position.coords.latitude;
     lng = position.coords.longitude;
@@ -36,3 +37,4 @@ myApp.getCity = function(lat,lng){
         }
     });
 };
+
