@@ -86,20 +86,19 @@ myApp.matchBikes = function(cityHref){
         method: 'GET',
     })
     //find the nearby bike stations
-    .then(function(stations){
-        var bikeStations = stations.network.stations;
+    .then(function(stationData){
+        var bikeStations = stationData.network.stations;
+        // console.log(bikeStations.free_bikes);
 
         // filter that shit
-        bikeStations = bikeStations.filter(function(userChoice){
-            return (userChoice  >= bikeStations.free_bikes);
-            console.log(bikeStations);
+        bikeStations = bikeStations.filter(function(bikeStation){
+            // console.log('user choice: ' + bikeStation);
+            // console.log(bikeStation.free_bikes);
+            return (userChoice  >= bikeStation.free_bikes);
         });
-        //for each looping through bike stations, filtering by more/equal to user's selection
-        // bikeStations.forEach(function(userChoice){
-
-        //     if(userChoice <=== ;
-        // });
-});
+        console.log(bikeStations);
+    });
+}
 
 myApp.init = function(){
     getLocation();
