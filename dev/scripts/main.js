@@ -73,24 +73,33 @@ myApp.findBikes = function(cityName){
         formEvent.preventDefault();
 
         //create variable to store user's choice
-        var value = $('#personsNumber option:selected').val();
-        console.log(value);
-        myApp.matchBikes();
+        userChoice = $('#personsNumber option:selected').val();
+        console.log(userChoice);
+        myApp.matchBikes(cityHref)
     });
 // };
 
 myApp.matchBikes = function(cityHref){
     $.ajax({
-        url: 'http://api.citybik.es/' + cityHref,
+        url: 'https://api.citybik.es/' + cityHref,
         dataType: 'JSON',
         method: 'GET',
     })
     //find the nearby bike stations
     .then(function(stations){
-        console.log(stations);
-        // var bikeStations = 
-    });
-}
+        var bikeStations = stations.network.stations;
+
+        // filter that shit
+        bikeStations = bikeStations.filter(function(userChoice){
+            return (userChoice  >= bikeStations.free_bikes);
+            console.log(bikeStations);
+        });
+        //for each looping through bike stations, filtering by more/equal to user's selection
+        // bikeStations.forEach(function(userChoice){
+
+        //     if(userChoice <=== ;
+        // });
+});
 
 myApp.init = function(){
     getLocation();
