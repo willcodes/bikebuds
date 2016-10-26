@@ -59,7 +59,7 @@ myApp.findBikes = function(cityName){
                 var finalCityName = thisArray[i].location.city.split(',')[0]
                 // console.log(finalCityName);
                 if(myCity === finalCityName){
-                    var cityHref = thisArray[i].href;
+                    cityHref = thisArray[i].href;
                     console.log(cityHref);
                 }
             }
@@ -67,3 +67,35 @@ myApp.findBikes = function(cityName){
     });
 }
 
+// event listener
+// myApp.formListener = function(){
+    $('form').on('submit', function(formEvent) {
+        formEvent.preventDefault();
+
+        //create variable to store user's choice
+        var value = $('#personsNumber option:selected').val();
+        console.log(value);
+        myApp.matchBikes();
+    });
+// };
+
+myApp.matchBikes = function(cityHref){
+    $.ajax({
+        url: 'http://api.citybik.es/' + cityHref,
+        dataType: 'JSON',
+        method: 'GET',
+    })
+    //find the nearby bike stations
+    .then(function(stations){
+        console.log(stations);
+        // var bikeStations = 
+    });
+}
+
+myApp.init = function(){
+    getLocation();
+}
+
+$(document).ready(function(){
+    myApp.init();
+});
