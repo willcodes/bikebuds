@@ -1,40 +1,69 @@
-var myApp = {};
+myApp = {};
 var lat = '';
 var lng = '';
-var cityName = '';
+var myCity = '';
+var cityHref = '';
 
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-        alert('Geolocation is not supported by this browser');
+        alert('browser does not support location services.');
     }
 }
-
 function showPosition(position) {
-    lat = position.coords.latitude;
-    lng = position.coords.longitude;
-    myApp.getCity(lat,lng);
+    lat = position.coords.latitude; 
+    lng = position.coords.longitude; 
+    console.log(lat);
+    console.log(lng);
+    myApp.findCity(lat,lng);
 }
 
-myApp.getCity = function(lat,lng){
+myApp.findCity = function(lat,lng){
     $.ajax({
-        url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=AIzaSyD3sqMdCuQ0LelH9L1ox8A7vw5JPFOAuGw`,
+        url: `https://maps.googleapis.com/maps/api/geocode/json?`,
+        dataType: 'JSON',
         method: 'GET',
-        dataType: 'json',
-    })
-    .then(function(cityData){
-        console.log(cityData);
-        var cityDataAddComp = cityData.results[0].address_components;
-        console.log(cityDataAddComp);
-        for(var i = 0; i< cityDataAddComp.length; i++){
-            var types = cityDataAddComp[i].types;
-            console.log(types);
-            if(types == "locality,political"){
-                var cityName = cityDataAddComp[i].long_name;
-                console.log(cityName);
+        data: {
+        key: 'AIzaSyD3sqMdCuQ0LelH9L1ox8A7vw5JPFOAuGw',
+        latlng: `${lat},${lng}`,
+        }
+})
+.then((resp) => {
+var addressComponents = resp.results[0].address_components;
+console.log(addressComponents);
+for(i=0;i<addressComponents.length;i++){
+    var types = addressComponents[i].types;
+    console.log(types);
+    if(types=="locality,political"){
+        var city = addressComponents[i].long_name ? addressComponents[i].long_name : alert('City Not Found'); // this should be your city, depending on where you are
+        if (city) {
+            myCity = city;
+            console.log(myCity);
+            myApp.findBikes(myCity);
+        }
+    }
+}
+});
+}
+myApp.findBikes = function(cityName){
+    $.ajax({
+        url: 'https://api.citybik.es/v2/networks',
+        dataType: 'JSON',
+        method: 'GET',
+    }).then(function(thisCity){
+        var thisArray = thisCity.networks;
+        for(var i = 0; i < thisArray.length; i++){
+            // console.log(thisArray[i].location.city);
+            if(thisArray[i].location.city.indexOf(',') > -1){
+                var finalCityName = thisArray[i].location.city.split(',')[0]
+                // console.log(finalCityName);
+                if(myCity === finalCityName){
+                    var cityHref = thisArray[i].href;
+                    console.log(cityHref);
+                }
             }
         }
     });
-};
+}
 
