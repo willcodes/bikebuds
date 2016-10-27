@@ -111,7 +111,7 @@ myApp.addMarkers = function(arr) {
 
          var manIcon = L.icon({
             iconUrl: 'assets/manicon.svg',
-            iconSize: [64,64],
+            iconSize: [56,56],
             inconAnchor: [0,0],
             popupAnchor: [0,-26],
         });
@@ -149,9 +149,17 @@ $('#mapid').on('click','.btn___info', function(){
     var freeBikesInfo = $("<div>").text(freeBikes);
     var emptyBikesInfo = $("<div>").text(emptyBikes);
 
+<<<<<<< HEAD
     infoContainer.empty();
     infoContainer.append(infoTitle,streetInfo,bikeInfoTitle,freeBikesInfo,emptyBikesInfo);
 });
+=======
+//page reloads when reset button is clicked
+    $('input[type=reset]').on('click', function(){
+        location.reload();
+    })
+
+>>>>>>> c9e707df09bd02ec95e513022f62f5c018273160
 
 myApp.init = function(){
     getLocation();
