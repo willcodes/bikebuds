@@ -121,7 +121,7 @@ myApp.addMarkers = function(arr) {
         var marker = L.marker([lat2,lng2],
         {icon: bikeIcon})
         .addTo(map);
-        marker.bindPopup(`${arr[0][i].extra.address}'<br> Free Bikes: ${arr[0][i].free_bikes}`).openPopup();
+        marker.bindPopup(`${arr[0][i].extra.address}<br> Free Bikes: ${arr[0][i].free_bikes}<br> Empty Slots: ${arr[0][i].empty_slots}`).openPopup();
     }
 // arr.forEach(function(arrayObj,index){
 //      });   
