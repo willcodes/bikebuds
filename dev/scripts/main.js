@@ -133,7 +133,7 @@ myApp.addMarkers = function(arr) {
         var marker = L.marker([lat2,lng2],
         {icon: bikeIcon})
         .addTo(map);
-        marker.bindPopup(`<div class="address">${arr[0][i].extra.address}</div> <div class="free-bikes"> Free Bikes: ${arr[0][i].free_bikes}</div> <div class="empty-bikes"> Empty Slots: ${arr[0][i].empty_slots}</div> <button class = "btn___info">Show </button> `).openPopup();
+        marker.bindPopup(`<div class="address">${arr[0][i].extra.address}</div> <div class="free-bikes"> Free Bikes: ${arr[0][i].free_bikes}</div> <div class="empty-bikes"> Empty Slots: ${arr[0][i].empty_slots}</div> <button class = "btn___info">SHOW </button> `).openPopup();
     }
 // arr.forEach(function(arrayObj,index){
 //      });   
@@ -177,8 +177,7 @@ myApp.init = function(){
       position: '50% 50%', // Similar to the CSS `background-position` property.
       posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
       resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
-      bgColor: 'rgba(0,0,0,0.8)', // Allow custom background-color for Vide div,
-      className: '', // Add custom CSS class to Vide div
+      className: '.overlay', // Add custom CSS class to Vide div
     
     });
 

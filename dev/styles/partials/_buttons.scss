@@ -4,9 +4,9 @@ input[type=submit], .btn___info{
     border-radius: 2px;
     color: white;
     transition: 0.2s all ease;
-    background-color:darken($greenTwo,25%);
+    background-color:lighten($greenOne,10%);
         &:hover, &:focus{
-            background-color: darken($greenTwo,35%);
+            background-color: darken($greenTwo,20%);
         }
 }
 .btn___info{
