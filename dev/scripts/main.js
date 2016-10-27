@@ -110,7 +110,7 @@ myApp.addMarkers = function(arr) {
 
          var manIcon = L.icon({
             iconUrl: 'assets/manicon.svg',
-            iconSize: [64,64],
+            iconSize: [56,56],
             inconAnchor: [0,0],
             popupAnchor: [0,-26],
         });
@@ -135,6 +135,11 @@ myApp.addMarkers = function(arr) {
 // arr.forEach(function(arrayObj,index){
 //      });   
 }
+
+//page reloads when reset button is clicked
+    $('input[type=reset]').on('click', function(){
+        location.reload();
+    })
 
 
 myApp.init = function(){
