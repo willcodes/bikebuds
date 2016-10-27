@@ -122,8 +122,10 @@ myApp.addMarkers = function(arr) {
         manMarker.bindPopup(`You are here!`).openPopup()
         
         for(var i = 0; i < arr[0].length; i++){
-            var lat2 = arr[0][i].latitude;
-            var lng2 = arr[0][i].longitude;
+
+        var lat2 = arr[0][i].latitude;
+        var lng2 = arr[0][i].longitude;
+
         var bikeIcon = L.icon({
             iconUrl: 'assets/bikeicon.svg',
             iconSize: [64,64],
@@ -134,6 +136,7 @@ myApp.addMarkers = function(arr) {
         {icon: bikeIcon})
         .addTo(map);
         marker.bindPopup(`<div class="address">${arr[0][i].extra.address}</div> <div class="free-bikes"> Free Bikes: ${arr[0][i].free_bikes}</div> <div class="empty-bikes"> Empty Slots: ${arr[0][i].empty_slots}</div> <button class = "btn___info">Show </button> `).openPopup();
+        marker.on('click', myApp.getDirections);
     }
 // arr.forEach(function(arrayObj,index){
 //      });   
@@ -153,16 +156,23 @@ $('#mapid').on('click','.btn___info', function(){
 
     infoContainer.empty();
     infoContainer.append(infoTitle,streetInfo,bikeInfoTitle,freeBikesInfo,emptyBikesInfo);
-    myApp.getDirections();
 });
 
-myApp.getDirections = function(){
+myApp.getDirections = function(event){
+    console.log(event);
     var origin = new google.maps.LatLng(lat,lng);
-    var destination = new.google.maps.LatLng()
+    var destination = new google.maps.LatLng(event.latlng.lat , event.latlng.lng);
+    
+    var DirectionsService = new google.maps.DirectionsService();
+
     DirectionsService.route({    
         origin: origin,
-        desination:
-    })
+        destination: destination,
+        travelMode: "WALKING",
+
+    },function(res){
+        console.log(res);
+    });
 }
 
 //page reloads when reset button is clicked
