@@ -107,6 +107,8 @@ myApp.addMarkers = function(arr) {
             });
         map.addLayer(layer);
         //map stuff above
+
+        
         for(var i = 0; i < arr[0].length; i++){
             var lat2 = arr[0][i].latitude;
             var lng2 = arr[0][i].longitude;
