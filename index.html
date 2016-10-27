@@ -11,13 +11,15 @@
 <body>
 	<nav>
 		<div class="logo">
-			<h2>Bike Buds</h2>
-			<img src="assets/bikeicon.svg" alt="bike icon">
+			<h2>Bike <span>Buds</span></h2>
+			<img src="assets/bikeicon2.svg" alt="bike icon">
 		</div>
 	</nav>
 	<header>
-		<div class="hero">
-			<div class="heroContent">
+		<div class="hero" style="width: 100vw; height: 90vh;"
+				data-vide-bg="mp4: assets/bikevideo.mp4, webm: assets/bikevideo.webm, ogg: assets/bikevideo.ogg , poster: assets/bikevideo.png"
+				data-vide-options="posterType: jpg, loop: false, muted: false, position: 0% 0%">
+				<div class="heroContent">
 				<h1>let's get started</h1>
 				<p>How many bikes do you need today?</p>
 				<form id='bikeForm'>
@@ -37,6 +39,7 @@
 				</form>
 			</div>
 		</div>
+	
 	</header>
 	<section class="output">
 		<div class="map-container">
@@ -58,5 +61,6 @@
 	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
 	<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
 	<script src="dev/scripts/main.js"></script>
+	<script src="plugins/jquery.vide.js"></script>
 </body>
 </html>

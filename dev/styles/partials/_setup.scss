@@ -19,6 +19,9 @@ h2{
     padding-top: 4px;
     letter-spacing: 1px;
     color: $greenOne;
+        span{
+            color: $darkblue;
+        }
 }
 a{
     text-decoration: none;
@@ -59,7 +62,7 @@ nav{
     background-position: center;
     background-size: cover;
     position: relative;
-    z-index: 1;
+    z-index: 10;
         .heroContent{
             position: absolute;
             top: 31.5%;
@@ -86,8 +89,16 @@ nav{
     display: none;
 }
 footer{
+
     text-align: center;
     p{
         font-size: 13px;
     }
+}
+input[type=submit]{
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background-color: $greenTwo;
 }
