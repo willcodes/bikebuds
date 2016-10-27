@@ -15,16 +15,24 @@ h1,h2,h3,h4,h5{
 body{
     font-family:$bodyFont;
 }
-
 nav{
-    margin-top:15px;    
+    margin-top:15px;
+    padding-left: 10px;
     .logo{
-        font-size:2.3rem;
+        color: $darkblue;
+        font-size:1.75rem;
         display:flex;
         align-items:flex-start;
     }
     img{
-        margin-left:25px;
-        width:96px;
+        fill: $darkblue;
+        margin-left:20px;
+        width:4rem;
+        margin-top: 5px;
+        // min-width: 
     }
+}
+.intro{
+    background: url(../assets/hero.jpg) fixed center no-repeat;
+    background-size: cover;
 }
