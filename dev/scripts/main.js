@@ -178,7 +178,6 @@ myApp.init = function(){
       posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
       resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
       className: '.overlay', // Add custom CSS class to Vide div
-    
     });
 
 }

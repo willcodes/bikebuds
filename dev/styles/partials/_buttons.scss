@@ -1,12 +1,12 @@
 input[type=submit], .btn___info{
     padding: 10px 20px;
     margin-left: 10px;
-    border-radius: 2px;
+    border-radius: 4px;
     color: white;
     transition: 0.2s all ease;
     background-color:lighten($greenOne,10%);
         &:hover, &:focus{
-            background-color: darken($greenTwo,20%);
+            background-color: darken($greenTwo,25%);
         }
 }
 .btn___info{
