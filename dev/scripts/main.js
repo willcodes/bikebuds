@@ -152,6 +152,7 @@ $('#mapid').on('click','.btn___info', function(){
     infoContainer.empty();
     infoContainer.append(infoTitle,streetInfo,bikeInfoTitle,freeBikesInfo,emptyBikesInfo);
 });
+
 //page reloads when reset button is clicked
     $('input[type=reset]').on('click', function(){
         location.reload();

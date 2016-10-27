@@ -48,7 +48,7 @@ nav{
     background-position: center;
     background-size: cover;
     position: relative;
-    z-index: 1;
+    z-index: 10;
         .heroContent{
             position: absolute;
             top: 31%;
@@ -75,4 +75,17 @@ input[type=submit]{
     margin-left: 10px;
     border: none;
     background-color: $greenTwo;
+}
+
+.hero{
+  // volume: 1,
+  // playbackRate: 1,
+  muted: true,
+  loop: true,
+  autoplay: true,
+  // position: '50% 50%', // Similar to the CSS `background-position` property.
+  posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+  resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+  bgColor: linear-gradient(top, rgba(15,40,54,0.4), rgba(15,40,54,0.6)), // Allow custom background-color for Vide div,
+  className: '' // Add custom CSS class to Vide div 
 }
