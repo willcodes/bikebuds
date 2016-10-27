@@ -107,10 +107,19 @@ myApp.addMarkers = function(arr) {
             });
         map.addLayer(layer);
         //map stuff above
+
+        
         for(var i = 0; i < arr[0].length; i++){
             var lat2 = arr[0][i].latitude;
             var lng2 = arr[0][i].longitude;
-        var marker = L.marker([lat2,lng2])
+        var bikeIcon = L.icon({
+            iconUrl: 'assets/bikeicon.svg',
+            iconSize: [64,64],
+            iconAnchor: [0,0],
+            popupAnchor: [32,16],
+        });
+        var marker = L.marker([lat2,lng2],
+        {icon: bikeIcon})
         .addTo(map);
         marker.bindPopup(`${arr[0][i].extra.address}'<br> Free Bikes: ${arr[0][i].free_bikes}`).openPopup();
     }
