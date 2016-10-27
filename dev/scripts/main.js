@@ -3,6 +3,7 @@ var lat = '';
 var lng = '';
 var myCity = '';
 var cityHref = '';
+var saved_stations = [];
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -67,17 +68,15 @@ myApp.findBikes = function(cityName){
     });
 }
 
-// event listener
-// myApp.formListener = function(){
-    $('form').on('submit', function(formEvent) {
-        formEvent.preventDefault();
+// event listener for submit form
+$('form').on('submit', function(formEvent) {
+    formEvent.preventDefault();
+    //create variable to store user's choice
+    userChoice = $('#personsNumber option:selected').val();
+    console.log(userChoice);
+    myApp.matchBikes(cityHref)
+});
 
-        //create variable to store user's choice
-        userChoice = $('#personsNumber option:selected').val();
-        console.log(userChoice);
-        myApp.matchBikes(cityHref)
-    });
-// };
 
 myApp.matchBikes = function(cityHref){
     $.ajax({
@@ -88,17 +87,37 @@ myApp.matchBikes = function(cityHref){
     //find the nearby bike stations
     .then(function(stationData){
         var bikeStations = stationData.network.stations;
-        // console.log(bikeStations.free_bikes);
-
         // filter that shit
         bikeStations = bikeStations.filter(function(bikeStation){
-            // console.log('user choice: ' + bikeStation);
-            // console.log(bikeStation.free_bikes);
-            return (userChoice  >= bikeStation.free_bikes);
+            return (userChoice <= bikeStation.free_bikes);
         });
-        console.log(bikeStations);
+        saved_stations.push(bikeStations);
+        myApp.addMarkers(saved_stations);
     });
 }
+
+myApp.addMarkers = function(arr) {
+            //map stuff below
+            //this is a map layer from the interwebs
+            var layer = new L.StamenTileLayer("terrain");
+            //this is the map variable
+            var map = new L.Map("mapid", {
+            center: new L.LatLng(lat, lng),
+            zoom: 15
+            });
+        map.addLayer(layer);
+        //map stuff above
+        for(var i = 0; i < arr[0].length; i++){
+            var lat2 = arr[0][i].latitude;
+            var lng2 = arr[0][i].longitude;
+        var marker = L.marker([lat2,lng2])
+        .addTo(map);
+        marker.bindPopup(`${arr[0][i].extra.address}'<br> Free Bikes: ${arr[0][i].free_bikes}`).openPopup();
+    }
+// arr.forEach(function(arrayObj,index){
+//      });   
+}
+
 
 myApp.init = function(){
     getLocation();
