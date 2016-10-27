@@ -162,6 +162,27 @@ $('#mapid').on('click','.btn___info', function(){
 
 myApp.init = function(){
     getLocation();
+
+    $('.hero').vide({
+      mp4: 'assets/bikevideo',
+      webm: 'assets/bikevideo',
+      ogv: 'assets/bikevideo',
+      poster: 'assets/bikevideo',
+    }, 
+    {
+      volume: 1,
+      playbackRate: 1,
+      muted: true,
+      loop: true,
+      autoplay: true,
+      position: '50% 50%', // Similar to the CSS `background-position` property.
+      posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+      resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+      bgColor: 'rgba(0,0,0,0.8)', // Allow custom background-color for Vide div,
+      className: '', // Add custom CSS class to Vide div
+    
+    });
+
 }
 
 $(document).ready(function(){
