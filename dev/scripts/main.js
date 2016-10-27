@@ -109,6 +109,15 @@ myApp.addMarkers = function(arr) {
 
         //map stuff above
 
+         var manIcon = L.icon({
+            iconUrl: 'assets/manicon.svg',
+            iconSize: [64,64],
+            inconAnchor: [0,0],
+            popupAnchor: [0,-26],
+        });
+
+        var manMarker = L.marker([lat, lng], {icon: manIcon}).addTo(map);
+        manMarker.bindPopup(`You are here!`).openPopup()
         
         for(var i = 0; i < arr[0].length; i++){
             var lat2 = arr[0][i].latitude;

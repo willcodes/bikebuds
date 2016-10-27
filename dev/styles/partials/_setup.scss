@@ -2,37 +2,77 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],input[disabled]{cursor:default;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}textarea{overflow:auto;vertical-align:top;}table{border-collapse:collapse;border-spacing:0;}body,figure{margin:0;}legend,button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0;}
 
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+* {margin: 0;padding: 0;}
 
-ul,h1,h2,h3{
-    margin:0;
-    padding:0;
-}
 h1,h2,h3,h4,h5{
     font-family:$headingFont;
+}
+h2{
+    padding-top: 4px;
+    color: $greenOne;
+}
+h3{
+    font-weight: bold;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    color: white;
+    padding-bottom: 4%;
 }
 body{
     font-family:$bodyFont;
 }
 nav{
-    margin-top:15px;
-    padding-left: 10px;
+    margin:8px 0;
+    padding-left: 2%;
+    height: auto;
     .logo{
         color: $darkblue;
-        font-size:1.75rem;
+        font-size:1.2rem;
         display:flex;
-        align-items:flex-start;
+        text-transform: uppercase;
+        align-items:center;
+        align-content: center;
     }
     img{
-        fill: $darkblue;
+        fill: $peach;
         margin-left:20px;
-        width:4rem;
-        margin-top: 5px;
-        // min-width: 
+        width:2.9rem;
+        transform: scaleX(-1);
+        filter: FlipH;
     }
 }
-.intro{
-    background: url(../assets/hero.jpg) fixed center no-repeat;
+.hero{
+    height: 90vh;
+    background: linear-gradient(top, rgba(15,40,54,0.4), rgba(15,40,54,0.6)), url(/assets/hero.png) fixed;
+    background-position: center;
     background-size: cover;
+    position: relative;
+    z-index: 1;
+        .heroContent{
+            position: absolute;
+            top: 31%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            width: 60%;
+            text-align: center;
+        }
+}
+.heroContent p{
+    color: white;
+    padding-bottom:10px;
+    font-size: 1.5rem;
+}
+select{
+    margin-top: 20px;
+    // appearance: none; //gets rid of the dropdown arrow
+    padding: 8px 15px;
+}
+input[type=submit]{
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background-color: $greenTwo;
 }
