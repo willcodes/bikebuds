@@ -17,15 +17,17 @@ h1{
 }
 h2{
     padding-top: 4px;
+    letter-spacing: 1px;
     color: $greenOne;
 }
 body{
     font-family:$bodyFont;
 }
 nav{
-    margin:8px 0;
-    padding-left: 2%;
-    height: 10vh;
+    padding: 15px 0 15px 25px;
+    // height: 10vh;
+    display:flex;
+    align-items:center;
     .logo{
         color: $darkblue;
         font-size:1.2rem;
@@ -33,6 +35,7 @@ nav{
         text-transform: uppercase;
         align-items:center;
         align-content: center;
+        height:auto;
     }
     img{
         fill: $peach;
@@ -44,7 +47,9 @@ nav{
 }
 .hero{
     height: 90vh;
-    background: linear-gradient(top, rgba(15,40,54,0.4), rgba(15,40,54,0.6)), url(/assets/hero.png) fixed;
+    min-height: 450px;
+    max-height: 800px;
+    background: linear-gradient(top, rgba(15,40,54,0.2), rgba(15,40,54,0.7)), url(/assets/hero.png) fixed;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -64,22 +69,12 @@ nav{
     padding-bottom:10px;
     font-size: 1.5rem;
 }
-select.option{
-    margin-top: 15px;
-    padding: 50px;
-    // appearance: none; //gets rid of the dropdown arrow
-}
-input[type=submit]{
-    border-radius: 1px;
-    padding: 10px 20px;
-    margin-left: 10px;
-    // border: none;
-    color: white;
-    background-color:darken($greenTwo, 20%);
-        &:hover, :focus{
 
-        }
+#personsNumber{
+    margin-top: 15px;
+    padding: 10px;
 }
+
 .output{
     display: none;
 }
