@@ -1,20 +1,20 @@
 input[type=submit], .btn___info{
-    border-radius: 1px;
     padding: 10px 20px;
     margin-left: 10px;
-    border: none;
+    border: 3px solid darken($greenTwo,20%);
+    border-radius: 4px;
     color: white;
     transition: 0.2s all ease;
-    background-color:darken($greenTwo, 20%);
-        &:hover, :focus{
-            background-color:$greenTwo;
+    background-color:transparent;
+        &:hover, &:focus{
+            background-color: darken($greenTwo,20%);
         }
 }
-
 .btn___info{
 	width: 100%;
 	padding: 5px 10px;
 	margin: 12px auto 0 auto;
 	border-radius: 2px;
-
+    background-color: $greenTwo;
+    border: none;
 }
