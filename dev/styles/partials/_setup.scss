@@ -19,13 +19,22 @@ h2{
     padding-top: 4px;
     letter-spacing: 1px;
     color: $greenOne;
+        span{
+            color: $darkblue;
+        }
+}
+a{
+    text-decoration: none;
+    color: $greenOne;
+        &:hover, :focus{
+            color: grey;
+        }
 }
 body{
     font-family:$bodyFont;
 }
 nav{
     padding: 15px 0 15px 25px;
-    // height: 10vh;
     display:flex;
     align-items:center;
     .logo{
@@ -71,10 +80,21 @@ nav{
 }
 
 #personsNumber{
+    border-radius: 4px;
     margin-top: 15px;
-    padding: 10px;
+    padding: 11px;
+    color: grey;
 }
+.output{
+    display: none;
+}
+footer{
 
+    text-align: center;
+    p{
+        font-size: 13px;
+    }
+}
 input[type=submit]{
     border-radius: 20px;
     padding: 10px 15px;
@@ -82,8 +102,3 @@ input[type=submit]{
     border: none;
     background-color: $greenTwo;
 }
-
-.output{
-    display: none;
-}
-
