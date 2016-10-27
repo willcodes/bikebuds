@@ -71,6 +71,8 @@ myApp.findBikes = function(cityName){
 // event listener for submit form
 $('form').on('submit', function(formEvent) {
     formEvent.preventDefault();
+    $('header').fadeOut();
+    $('.output').fadeIn();
     //create variable to store user's choice
     userChoice = $('#personsNumber option:selected').val();
     console.log(userChoice);

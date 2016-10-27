@@ -5,27 +5,29 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 * {margin: 0;padding: 0;}
 
-h1,h2,h3,h4,h5{
+h1,h2,h4,h5{
     font-family:$headingFont;
 }
-h2{
-    padding-top: 4px;
-    color: $greenOne;
-}
-h3{
+h1{
     font-weight: bold;
     font-size: 5rem;
     letter-spacing: 2px;
     color: white;
-    padding-bottom: 4%;
+    padding-bottom: 2%;
+}
+h2{
+    padding-top: 4px;
+    letter-spacing: 1px;
+    color: $greenOne;
 }
 body{
     font-family:$bodyFont;
 }
 nav{
-    margin:8px 0;
-    padding-left: 2%;
-    height: auto;
+    padding: 15px 0 15px 25px;
+    // height: 10vh;
+    display:flex;
+    align-items:center;
     .logo{
         color: $darkblue;
         font-size:1.2rem;
@@ -33,6 +35,7 @@ nav{
         text-transform: uppercase;
         align-items:center;
         align-content: center;
+        height:auto;
     }
     img{
         fill: $peach;
@@ -44,14 +47,16 @@ nav{
 }
 .hero{
     height: 90vh;
-    background: linear-gradient(top, rgba(15,40,54,0.4), rgba(15,40,54,0.6)), url(/assets/hero.png) fixed;
+    min-height: 450px;
+    max-height: 800px;
+    background: linear-gradient(top, rgba(15,40,54,0.2), rgba(15,40,54,0.7)), url(/assets/hero.png) fixed;
     background-position: center;
     background-size: cover;
     position: relative;
     z-index: 10;
         .heroContent{
             position: absolute;
-            top: 31%;
+            top: 31.5%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
@@ -64,11 +69,12 @@ nav{
     padding-bottom:10px;
     font-size: 1.5rem;
 }
-select{
-    margin-top: 20px;
-    // appearance: none; //gets rid of the dropdown arrow
-    padding: 8px 15px;
+
+#personsNumber{
+    margin-top: 15px;
+    padding: 10px;
 }
+
 input[type=submit]{
     border-radius: 20px;
     padding: 10px 15px;
@@ -77,15 +83,7 @@ input[type=submit]{
     background-color: $greenTwo;
 }
 
-.hero{
-  // volume: 1,
-  // playbackRate: 1,
-  muted: true,
-  loop: true,
-  autoplay: true,
-  // position: '50% 50%', // Similar to the CSS `background-position` property.
-  posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
-  resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
-  bgColor: linear-gradient(top, rgba(15,40,54,0.4), rgba(15,40,54,0.6)), // Allow custom background-color for Vide div,
-  className: '' // Add custom CSS class to Vide div 
+.output{
+    display: none;
 }
+
