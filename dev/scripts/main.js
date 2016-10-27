@@ -153,11 +153,22 @@ $('#mapid').on('click','.btn___info', function(){
 
     infoContainer.empty();
     infoContainer.append(infoTitle,streetInfo,bikeInfoTitle,freeBikesInfo,emptyBikesInfo);
+    myApp.getDirections();
 });
-//page reloads when reset button is clicked
-    $('input[type=reset]').on('click', function(){
-        location.reload();
+
+myApp.getDirections = function(){
+    var origin = new google.maps.LatLng(lat,lng);
+    var destination = new.google.maps.LatLng()
+    DirectionsService.route({    
+        origin: origin,
+        desination:
     })
+}
+
+//page reloads when reset button is clicked
+$('input[type=reset]').on('click', function(){
+    location.reload();
+})
 
 myApp.init = function(){
     getLocation();
