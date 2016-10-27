@@ -106,6 +106,7 @@ myApp.addMarkers = function(arr) {
             zoom: 15
             });
         map.addLayer(layer);
+
         //map stuff above
 
         
@@ -121,12 +122,27 @@ myApp.addMarkers = function(arr) {
         var marker = L.marker([lat2,lng2],
         {icon: bikeIcon})
         .addTo(map);
-        marker.bindPopup(`${arr[0][i].extra.address}<br> Free Bikes: ${arr[0][i].free_bikes}<br> Empty Slots: ${arr[0][i].empty_slots}<br> <button class = "btn___info">Show </button> `).openPopup();
+        marker.bindPopup(`<div class="address">${arr[0][i].extra.address}</div> <div class="free-bikes"> Free Bikes: ${arr[0][i].free_bikes}</div> <div class="empty-bikes"> Empty Slots: ${arr[0][i].empty_slots}</div> <button class = "btn___info">Show </button> `).openPopup();
     }
 // arr.forEach(function(arrayObj,index){
 //      });   
 }
+$('#mapid').on('click','.btn___info', function(){
+    var infoContainer = $('.info-container');
+    var street = $(this).siblings('.address').text();
+    var freeBikes = $(this).siblings('.free-bikes').text();
+    var emptyBikes = $(this).siblings('.empty-bikes').text();
+    console.log(street,freeBikes,emptyBikes);
 
+    var infoTitle = $("<h2>").text("Bike Stop Information");
+    var streetInfo = $("<div> Location: ").text(street);
+    var bikeInfoTitle = $("<h3>").text("Bikes:")
+    var freeBikesInfo = $("<div>").text(freeBikes);
+    var emptyBikesInfo = $("<div>").text(emptyBikes);
+
+    infoContainer.empty();
+    infoContainer.append(infoTitle,streetInfo,bikeInfoTitle,freeBikesInfo,emptyBikesInfo);
+});
 
 myApp.init = function(){
     getLocation();
