@@ -159,11 +159,9 @@ $('#mapid').on('click','.btn___info', function(){
     $('input[type=reset]').on('click', function(){
         location.reload();
     })
-
 myApp.init = function(){
     getLocation();
 }
-
 $(document).ready(function(){
     myApp.init();
 });
