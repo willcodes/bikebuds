@@ -1,9 +1,20 @@
+input[type=submit], .btn___info{
+    border-radius: 1px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    color: white;
+    transition: 0.2s all ease;
+    background-color:darken($greenTwo, 20%);
+        &:hover, :focus{
+            background-color:$greenTwo;
+        }
+}
+
 .btn___info{
-    background:transparent;
-    border:1px solid black;
-    border-radius:2px;
-    text-align: center;
-    width:100%;
-    margin:0 auto;
-    margin-top:10px;
+	width: 100%;
+	padding: 5px 10px;
+	margin: 12px auto 0 auto;
+	border-radius: 2px;
+
 }
