@@ -9,16 +9,16 @@
 	<link rel="stylesheet" type="text/css" href="public/styles/styles.css">
 </head>
 <body>
+	<nav>
+		<div class="logo">
+			<h2>Bike Buds</h2>
+			<img src="assets/bikeicon.svg" alt="bike icon">
+		</div>
+	</nav>
 	<header>
-		<nav>
-			<div class="logo">
-				<h2>Bike Buds</h2>	
-				<img src="assets/bikeicon.svg" alt="bike icon">
-			</div>
-		</nav>
 		<div class="hero">
 			<div class="heroContent">
-				<h3>let's get started</h3>
+				<h1>let's get started</h1>
 				<p>How many bikes do you need today?</p>
 				<form id='bikeForm'>
 					<select id ='personsNumber' form='bikeForm'>
@@ -33,22 +33,22 @@
 						<option value="9">9 Bikers</option>
 						<option value="10">10 Bikers</option>
 					</select>
-					<input type="submit" value="show those bikes">
+					<input type="submit" value="Map it!">
 				</form>
 			</div>
 		</div>
 	</header>
-	<div class="map-container">
-		<div id="mapid"></div>
+	<section class="output">
+		<div class="map-container">
+			<div id="mapid"></div>
+		</div>
+		<div class="info-container"></div>
+		<div>
+			<input type="reset" value="Re-start">
+		</div>
 
-	</div>
-	<div class="info-container">
-		
-	</div>
-	<div>
-		<input type="reset" value="Re-start">
-	</div>
-	<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+		<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+	</section>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="https://use.fontawesome.com/f653ee54f9.js"></script>
 	<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>

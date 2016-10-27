@@ -5,19 +5,19 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 * {margin: 0;padding: 0;}
 
-h1,h2,h3,h4,h5{
+h1,h2,h4,h5{
     font-family:$headingFont;
 }
-h2{
-    padding-top: 4px;
-    color: $greenOne;
-}
-h3{
+h1{
     font-weight: bold;
     font-size: 5rem;
     letter-spacing: 2px;
     color: white;
-    padding-bottom: 4%;
+    padding-bottom: 2%;
+}
+h2{
+    padding-top: 4px;
+    color: $greenOne;
 }
 body{
     font-family:$bodyFont;
@@ -25,7 +25,7 @@ body{
 nav{
     margin:8px 0;
     padding-left: 2%;
-    height: auto;
+    height: 10vh;
     .logo{
         color: $darkblue;
         font-size:1.2rem;
@@ -51,7 +51,7 @@ nav{
     z-index: 1;
         .heroContent{
             position: absolute;
-            top: 31%;
+            top: 31.5%;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
@@ -64,15 +64,22 @@ nav{
     padding-bottom:10px;
     font-size: 1.5rem;
 }
-select{
-    margin-top: 20px;
+select.option{
+    margin-top: 15px;
+    padding: 50px;
     // appearance: none; //gets rid of the dropdown arrow
-    padding: 8px 15px;
 }
 input[type=submit]{
-    border-radius: 20px;
-    padding: 10px 15px;
+    border-radius: 1px;
+    padding: 10px 20px;
     margin-left: 10px;
-    border: none;
-    background-color: $greenTwo;
+    // border: none;
+    color: white;
+    background-color:darken($greenTwo, 20%);
+        &:hover, :focus{
+
+        }
+}
+.output{
+    display: none;
 }
