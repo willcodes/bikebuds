@@ -58,7 +58,6 @@ nav{
     height: 90vh;
     min-height: 450px;
     max-height: 800px;
-    // background: linear-gradient(top, rgba(15,40,54,0.2), rgba(15,40,54,0.7)), url(/assets/hero.png) fixed;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -78,18 +77,16 @@ nav{
     padding-bottom:10px;
     font-size: 1.5rem;
 }
-
 #personsNumber{
     border-radius: 4px;
     margin-top: 15px;
-    padding: 11px;
+    padding: 8px 10px;
     color: grey;
 }
 .output{
     display: none;
 }
 footer{
-
     text-align: center;
     p{
         font-size: 13px;
