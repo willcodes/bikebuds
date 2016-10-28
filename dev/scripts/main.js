@@ -78,6 +78,8 @@ myApp.findBikes = function(cityName) {
                     cityHref = thisArray[i].href;
                     console.log(cityHref);
                     //get rid of loader below here and fadeIn our header content
+                    $('#loader').fadeOut();
+                    $('.heroContent').fadeIn();
                     //this data is complete and the user should be able to use this app
                 }
             }
