@@ -178,6 +178,7 @@ $('#mapid').on('click','.btn___info', function(){
     infoContainer.append(infoTitle,streetInfo,bikeInfoTitle,freeBikesInfo,emptyBikesInfo);
     $('#direction').css('opacity', '1');
     $('#direction').css('height', 'auto');
+    $('.infoAndDirection').css('opacity', '1');
     //scroll to bottom function below here.
 });
 
@@ -240,9 +241,10 @@ myApp.init = function(){
       loop: true,
       autoplay: true,
       position: '50% 50%', // Similar to the CSS `background-position` property.
-      posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... -
-      resizing: true,
-      className: '.overlay', // Add custom CSS class to Vide div
+      posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+      resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+      bgColor: 'transparent', // Allow custom background-color for Vide div,
+      className: '', // Add custom CSS class to Vide div
     });
 }
 //doc ready with init.

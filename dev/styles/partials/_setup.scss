@@ -109,22 +109,44 @@ input[type=submit]{
     height:0;
     opacity:0;
 }
+
+.output{
+}
+
+.map-container{
+    position: relative;
+}
+
 .info-container,#direction{
     h2{
-        text-align:center;
-        padding:15px 0;
+        padding:5px 0;
+        color:white;
     }
     h3{
-        text-align:left;
-        padding:15px 0;
+        padding:5px 0;
+        color:white;
     }
     .street-name{
         font-style:italic;
-        text-align:center;
     }
-    text-align:left;
-    width:100%;
-    max-width:500px;
-    min-width:320px;
-    margin:0 auto;
 }
+
+.infoAndDirection{
+    font-size: 0.8rem;
+    background: #6a9da0;
+    margin: 0;
+    width:20%;
+    border: solid 5px #f0e9d3;
+    text-align: center;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    z-index:400;
+    opacity: 0;
+}
+b{
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+
