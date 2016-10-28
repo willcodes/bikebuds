@@ -178,7 +178,7 @@ myApp.init = function(){
       position: '50% 50%', // Similar to the CSS `background-position` property.
       posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
       resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
-      bgColor: 'rgba(0,0,0,0.8)', // Allow custom background-color for Vide div,
+      bgColor: 'red', // Allow custom background-color for Vide div,
       className: '', // Add custom CSS class to Vide div
     
     });
