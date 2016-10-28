@@ -225,6 +225,13 @@ $('input[type=reset]').on('click', function(){
     location.reload();
 })
 
+//modal with about information
+function modalBox() {
+    el = document.getElementById("modal");
+    el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+
+
 //init function with vide bs inside
 myApp.init = function(){
     getLocation();
