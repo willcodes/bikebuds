@@ -16,9 +16,14 @@ input[type=submit], .btn___info{
 	border-radius: 2px;
     border: none;
 }
-input[type="reset"]{
-    text-align: center;
-    margin:0 auto;
-    display:block;
-    text-align:center;
+.btn__reset{
+    position: absolute;
+    right:0;
+    top:0;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    background-color: $greenTwo;
+    z-index: 401;
 }
