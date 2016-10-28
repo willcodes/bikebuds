@@ -183,6 +183,7 @@ $('#mapid').on('click','.btn___info', function(){
 });
 
 myApp.getDirections = function({latlng: {lat: destLat, lng: destLng}}){
+    $('.infoAndDirection').css('opacity', '0');
     $('#direction').css('opacity', '0');
     $('#direction').css('height', '0');
     infoContainer.empty();
