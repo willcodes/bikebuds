@@ -4,3 +4,4 @@
 public/styles
 public/scripts
 node_modules
+.idea/*
