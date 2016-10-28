@@ -5,7 +5,7 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 * {margin: 0;padding: 0;}
 
-h1,h2,h4,h5{
+h1,h2,h3,h4,h5{
     font-family:$headingFont;
 }
 h1{
@@ -19,6 +19,7 @@ h2{
     padding-top: 4px;
     letter-spacing: 1px;
     color: $greenOne;
+    font-size: 1.6rem;
         span{
             color: $darkblue;
         }
@@ -26,8 +27,8 @@ h2{
 a{
     text-decoration: none;
     color: $greenOne;
-        &:hover, :focus{
-            color: grey;
+        &:hover, &:focus{
+            color: darken($greenOne,20%);
         }
 }
 body{
@@ -39,20 +40,30 @@ nav{
     display:flex;
     align-items:center;
     .logo{
-        color: $darkblue;
-        font-size:1.2rem;
         display:flex;
+        flex: 1;
         text-transform: uppercase;
         align-items:center;
-        align-content: center;
         height:auto;
+            img{
+                margin: 4px 0 0 20px;
+                width: 2.4rem;
+                transform: scaleX(-1);
+                filter: FlipH;
+            }
     }
-    img{
-        margin-left:20px;
-        width:2.9rem;
-        transform: scaleX(-1);
-        filter: FlipH;
-    }
+}
+nav a{
+    font-family: $headingFont;
+    font-size: 1.6rem;
+    padding: 4px 25px 0 0; 
+    letter-spacing: 1px;
+    color: lightgrey;
+    margin-left: auto;
+    transition: 0.3s all ease;
+        a:hover, a:focus{
+            color: $greenOne;
+        }
 }
 .overlay{
     position: absolute;
@@ -127,4 +138,29 @@ input[type=submit]{
     max-width:500px;
     min-width:320px;
     margin:0 auto;
+}
+#modal{
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+    text-align:center;
+    z-index: 1000;
+        div{
+            border-radius: 2px;
+            width:80%;
+            margin: 100px auto;
+            background-color: white;
+            padding:15px;
+            text-align:center;
+                p:nth-of-type(3){
+                    font-weight: bold;
+                    padding-top: 20px;
+                }
+        }
+}
+#modal div a:hover, div a:focus{
+    color: darken($greenOne,25%);
 }
