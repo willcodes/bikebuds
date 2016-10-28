@@ -32,6 +32,7 @@ a{
 }
 body{
     font-family:$bodyFont;
+    font-weight: lighter;
 }
 nav{
     padding: 12px 0 10px 25px;
@@ -69,6 +70,7 @@ nav{
     position: relative;
     z-index: 10;
         .heroContent{
+            display: none;
             position: absolute;
             top: 31%;
             z-index: 30;
@@ -103,12 +105,9 @@ input[type=submit]{
     border: none;
     background-color: $greenTwo;
 }
-
 #direction{
     height:0;
     opacity:0;
-}
-.output{
 }
 .info-container,#direction{
     h2{
