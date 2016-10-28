@@ -16,10 +16,10 @@ input[type=submit], .btn___info{
 	border-radius: 2px;
     border: none;
 }
-.btn__reset{
+input[type="reset"]{
     position: absolute;
-    right:0;
-    top:0;
+    right:5px;
+    top:5px;
     border-radius: 20px;
     padding: 10px 15px;
     margin-left: 10px;
