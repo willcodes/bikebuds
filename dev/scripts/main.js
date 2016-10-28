@@ -156,13 +156,14 @@ $('#mapid').on('click','.btn___info', function(){
 
     infoContainer.empty();
     infoContainer.append(infoTitle,streetInfo,bikeInfoTitle,freeBikesInfo,emptyBikesInfo);
+    $('#directions').css('opacity', '1');
+    $('#directions').css('height', 'auto');
 });
 
-myApp.getDirections = function(event){
-    console.log(event);
+myApp.getDirections = function({latlng: {lat: destLat, lng: destLng}}){
+    console.log(destLat, destLng);
     var origin = new google.maps.LatLng(lat,lng);
-    var destination = new google.maps.LatLng(event.latlng.lat , event.latlng.lng);
-    
+    var destination = new google.maps.LatLng(destLat , destLng);
     var DirectionsService = new google.maps.DirectionsService();
 
     DirectionsService.route({    
@@ -170,11 +171,27 @@ myApp.getDirections = function(event){
         destination: destination,
         travelMode: "WALKING",
 
-    },function(res){
-        console.log(res);
-    });
-}
+    },function({
+        routes: [{
+            legs: [
+                {
+                    steps: directions
+                }
+            ]
+        }]
+      }) {
+          var directions = directions.map(direction => direction.instructions);
+          console.log(directions); 
+          $('#direction').empty();
+        //   var directionContainer = $('<div class="direction-container>');
 
+          for(var i = 0; i < directions.length; i++ ){
+              var directionItem = $('<div>').html(directions[i]);
+              console.log(directionItem);
+              $("#direction").append(directionItem);
+          }
+        });
+}
 //page reloads when reset button is clicked
 $('input[type=reset]').on('click', function(){
     location.reload();
@@ -182,6 +199,27 @@ $('input[type=reset]').on('click', function(){
 
 myApp.init = function(){
     getLocation();
+
+    $('.hero').vide({
+      mp4: 'assets/bikevideo',
+      webm: 'assets/bikevideo',
+      ogv: 'assets/bikevideo',
+      poster: 'assets/bikevideo',
+    }, 
+    {
+      volume: 1,
+      playbackRate: 1,
+      muted: true,
+      loop: true,
+      autoplay: true,
+      position: '50% 50%', // Similar to the CSS `background-position` property.
+      posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+      resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+      bgColor: 'rgba(0,0,0,0.8)', // Allow custom background-color for Vide div,
+      className: '', // Add custom CSS class to Vide div
+    
+    });
+
 }
 
 $(document).ready(function(){
