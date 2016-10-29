@@ -1,12 +1,13 @@
 input[type=submit], .btn___info{
     padding: 9px 20px;
     margin-left: 10px;
-    border-radius: 3px;
+    border-radius: 2px;
     color: white;
+    border:none;
     transition: 0.2s all ease;
     background-color:lighten($greenOne,10%);
         &:hover, &:focus{
-            background-color: darken($greenTwo,25%);
+            background-color: darken($greenTwo,15%);
         }
 }
 .btn___info{
@@ -15,15 +16,22 @@ input[type=submit], .btn___info{
 	margin: 12px auto 0 auto;
 	border-radius: 2px;
     border: none;
+        &:hover, &:focus{
+            background-color: darken($greenTwo,15%);
+        }
 }
-input[type="reset"]{
+input[type=reset]{
     position: absolute;
-    right:5px;
-    top:5px;
-    border-radius: 20px;
+    right:13px;
+    color: white;
+    top:15px;
+    border-radius: 2px;
     padding: 10px 15px;
     margin-left: 10px;
     border: none;
     background-color: $greenTwo;
     z-index: 401;
+        &:hover, &:focus{
+            background-color: darken($greenTwo,15%);
+        }
 }
