@@ -229,7 +229,7 @@ $('input[type=reset]').on('click', function(){
 
 //modal with 'about' information
 function modalBox() {
-    el = document.getElementById("modal");
+    var el = document.getElementById("modal");
     el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
 

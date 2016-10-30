@@ -9,6 +9,12 @@
     }
 }
 @media all and (max-width: 530px){
+    .heroContent{
+        top: 24%;
+    }
+    .heroContent p{
+        font-size: 1.2rem;
+    }
     h1{
         font-size:4rem;
     }
@@ -25,4 +31,10 @@
         width:100%;
 	}
     
+}
+
+@media all and (max-width: 360px){
+    .heroContent{
+        top: 10%;
+    }
 }
