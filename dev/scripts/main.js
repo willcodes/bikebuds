@@ -156,7 +156,7 @@ myApp.addMarkers = function(arr) {
             {icon: bikeIcon})
             .addTo(map);
             //these things are all relate to our map
-            marker.bindPopup(`<div class="address">${arr[0][i].extra.address}</div> <div class="free-bikes"> Free Bikes: ${arr[0][i].free_bikes}</div> <div class="empty-bikes"> Empty Slots: ${arr[0][i].empty_slots}</div> <button class = "btn___info">Show </button> `);
+            marker.bindPopup(`<div class="address">${arr[0][i].extra.address}</div> <div class="free-bikes"> Free Bikes: ${arr[0][i].free_bikes}</div> <div class="empty-bikes"> Empty Slots: ${arr[0][i].empty_slots}</div> <button class = "btn___info">SHOW</button> `);
             //saying when we click the marker, run this fnct
             marker.on('click', myApp.getDirections);
         }
@@ -227,7 +227,7 @@ $('input[type=reset]').on('click', function(){
     location.reload();
 })
 
-//modal with about information
+//modal with 'about' information
 function modalBox() {
     el = document.getElementById("modal");
     el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";

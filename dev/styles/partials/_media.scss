@@ -5,10 +5,13 @@
         }
         h3{
             font-size: 1.2rem;
-        }   
+        }
     }
 }
 @media all and (max-width: 530px){
+    h1{
+        font-size:4rem;
+    }
     .map-container{
         min-height:400px;
         height:auto;
