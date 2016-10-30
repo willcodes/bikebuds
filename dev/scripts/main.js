@@ -1,5 +1,5 @@
 //create blank object to hold application functions.
-myApp = {};
+var myApp = {};
 //create variables to store info to be used later
 var lat = '';
 var lng = '';
@@ -10,6 +10,7 @@ var cityHref = '';
 //array of stations filtered by bikes needed
 var saved_stations = [];
 var infoContainer = $('.info-container');
+var userChoice = '';
 
 //browser built in geolocation 
 function getLocation() {
@@ -42,7 +43,7 @@ myApp.findCity = function(lat,lng){
     .then((resp) => {
     var addressComponents = resp.results[0].address_components;
     console.log(addressComponents);
-    for(i=0;i<addressComponents.length;i++){
+    for(var i=0;i<addressComponents.length;i++){
         var types = addressComponents[i].types;
         console.log(types);
         //locality and political must both match to return the Municipal name, ie'toronto'
