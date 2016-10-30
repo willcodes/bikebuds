@@ -5,7 +5,6 @@
 @import "partials/buttons";
 @import "partials/loader";
 
-
 body,html{
     font: 16px $bodyFont;
     font-weight: lighter;
@@ -138,16 +137,21 @@ nav a{
     z-index: 1000;
         div{
             border-radius: 2px;
-            width:80%;
+            width:75%;
             margin: 100px auto;
             background-color: white;
-            padding:15px;
+            padding:45px;
             text-align:center;
                 p:nth-of-type(3){
-                    font-weight: bold;
-                    padding-top: 20px;
+                    padding: 25px 0;
                 }
         }
+}
+#modal p{
+    line-height: 24px;
+}
+#modal div p:nth-of-type(1){
+    padding-bottom: 15px;
 }
 #modal div a:hover, div a:focus{
     color: darken($greenOne,25%);

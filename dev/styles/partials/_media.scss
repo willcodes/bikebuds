@@ -5,10 +5,19 @@
         }
         h3{
             font-size: 1.2rem;
-        }   
+        }
     }
 }
 @media all and (max-width: 530px){
+    .heroContent{
+        top: 24%;
+    }
+    .heroContent p{
+        font-size: 1.2rem;
+    }
+    h1{
+        font-size:4rem;
+    }
     .map-container{
         min-height:400px;
         height:auto;
@@ -22,4 +31,10 @@
         width:100%;
 	}
     
+}
+
+@media all and (max-width: 360px){
+    .heroContent{
+        top: 10%;
+    }
 }
