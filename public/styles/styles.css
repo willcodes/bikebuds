@@ -263,7 +263,8 @@ nav a {
   color: lightgrey;
   margin-left: auto;
   -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease; }
+  transition: 0.3s all ease;
+  display: block; }
   nav a a:hover, nav a a:focus {
     color: #6b9ea0; }
 
@@ -316,15 +317,20 @@ nav a {
   padding: 5px 0;
   color: white;
   font-size: 1.8rem;
+  line-height: 2.2rem;
   text-transform: uppercase; }
 
 .info-container h3, #direction h3 {
   padding: 5px 0;
   color: white;
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  letter-spacing: 1px; }
 
 .info-container .street-name, #direction .street-name {
   font-style: italic; }
+
+.info-container div, #direction div {
+  line-height: 2rem; }
 
 #modal {
   visibility: hidden;
@@ -337,14 +343,19 @@ nav a {
   z-index: 1000; }
   #modal div {
     border-radius: 2px;
-    width: 80%;
+    width: 75%;
     margin: 100px auto;
     background-color: white;
-    padding: 15px;
+    padding: 45px;
     text-align: center; }
     #modal div p:nth-of-type(3) {
-      font-weight: bold;
-      padding-top: 20px; }
+      padding: 25px 0; }
+
+#modal p {
+  line-height: 24px; }
+
+#modal div p:nth-of-type(1) {
+  padding-bottom: 15px; }
 
 #modal div a:hover, div a:focus {
   color: #375455; }
@@ -354,6 +365,8 @@ nav a {
   margin: 0;
   width: 25%;
   min-width: 250px;
+  max-height: 500px;
+  overflow-y: auto;
   border: solid 5px #f0e9d3;
   text-align: center;
   position: absolute;
@@ -361,11 +374,10 @@ nav a {
   left: 0%;
   z-index: 400;
   opacity: 0;
-  padding: 2px;
+  padding: 20px 10px;
   box-shadow: 1px -1px 5px grey; }
 
 b {
-  font-style: italic;
   font-size: 1.1rem; }
 
 @media (max-width: 850px) {
@@ -381,6 +393,8 @@ b {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%); }
+  .heroContent p {
+    font-size: 1.2rem; }
   .map-container {
     min-height: 400px;
     height: auto; }
@@ -391,4 +405,13 @@ b {
     position: static;
     width: 100%; }
   #loader {
-    margin-top: 50%; } }
+    margin-top: 50%; }
+  #modal div {
+    padding: 10px;
+    line-height: 1.6rem;
+    width: 90%;
+    margin: 15px auto; } }
+
+@media all and (max-width: 360px) {
+  .heroContent {
+    top: 10%; } }
