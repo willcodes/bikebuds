@@ -198,7 +198,7 @@ input[type=reset] {
 
 #loader {
   margin: 13% auto 0 auto;
-  width: 150px; }
+  width: 125px; }
 
 body, html {
   font: 16px "Raleway", sans-serif;
@@ -260,7 +260,6 @@ nav a {
   font-family: "Fjalla One", sans-serif;
   font-size: 1.6rem;
   padding: 4px 25px 0 0;
-  letter-spacing: 1px;
   color: lightgrey;
   margin-left: auto;
   -webkit-transition: 0.3s all ease;
@@ -376,6 +375,12 @@ b {
     font-size: 1.2rem; } }
 
 @media all and (max-width: 530px) {
+  h1 {
+    font-size: 3.5rem; }
+  .hero .heroContent {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
   .map-container {
     min-height: 400px;
     height: auto; }
@@ -384,4 +389,6 @@ b {
     height: auto; }
   .infoAndDirection {
     position: static;
-    width: 100%; } }
+    width: 100%; }
+  #loader {
+    margin-top: 50%; } }

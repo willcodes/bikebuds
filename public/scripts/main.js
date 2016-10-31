@@ -230,7 +230,7 @@ $('input[type=reset]').on('click', function () {
 
 //modal with about information
 function modalBox() {
-    el = document.getElementById("modal");
+    var el = document.getElementById("modal");
     el.style.visibility = el.style.visibility == "visible" ? "hidden" : "visible";
 }
 
@@ -249,7 +249,7 @@ myApp.init = function () {
         loop: true,
         autoplay: true,
         position: '50% 50%', // Similar to the CSS `background-position` property.
-        posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+        posterType: 'jpg', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
         resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
         bgColor: 'transparent', // Allow custom background-color for Vide div,
         className: '' });
