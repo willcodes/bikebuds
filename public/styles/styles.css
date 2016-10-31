@@ -202,7 +202,8 @@ input[type=reset] {
 
 body, html {
   font: 16px "Raleway", sans-serif;
-  font-weight: lighter; }
+  font-weight: lighter;
+  max-width: 1450px; }
 
 h1, h2, h3, h4, h5 {
   font-family: "Fjalla One", sans-serif; }
@@ -330,7 +331,7 @@ nav a {
   font-style: italic; }
 
 .info-container div, #direction div {
-  line-height: 2rem; }
+  line-height: 1.8rem; }
 
 #modal {
   visibility: hidden;
@@ -365,7 +366,7 @@ nav a {
   margin: 0;
   width: 25%;
   min-width: 250px;
-  max-height: 500px;
+  max-height: 450px;
   overflow-y: auto;
   border: solid 5px #f0e9d3;
   text-align: center;
