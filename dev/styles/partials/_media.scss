@@ -9,14 +9,15 @@
     }
 }
 @media all and (max-width: 530px){
-    .heroContent{
-        top: 24%;
+    h1{
+        font-size:3.5rem;
+    }
+    .hero .heroContent{
+        top: 50%;
+        transform:translateY(-50%);
     }
     .heroContent p{
         font-size: 1.2rem;
-    }
-    h1{
-        font-size:4rem;
     }
     .map-container{
         min-height:400px;
@@ -30,11 +31,21 @@
 		position: static;
         width:100%;
 	}
-    
+    #loader{
+        margin-top:50%;
+    }
+    #modal{
+        div{
+            padding:10px;
+            line-height: 1.6rem;
+            width:90%;
+            margin:15px auto;
+        }
+    }
 }
-
 @media all and (max-width: 360px){
     .heroContent{
         top: 10%;
     }
+    
 }
