@@ -83,6 +83,10 @@ myApp.findBikes = function(cityName) {
                     $('.heroContent').fadeIn();
                     //this data is complete and the user should be able to use this app
                 }
+                else{
+                    $('#loader').fadeOut();
+                    $('.cityNotFound').fadeIn();
+                }
             }
         }
     });
